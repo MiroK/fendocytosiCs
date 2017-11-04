@@ -1,0 +1,137 @@
+\documentclass[times]{nlaauth}
+
+\usepackage{moreverb}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{graphicx, caption, subcaption}
+\usepackage{multirow, array}
+\usepackage{amsmath, amsfonts, amssymb, xfrac}
+\usepackage{tikz}
+\usetikzlibrary{shapes, snakes, patterns}
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\usepackage{standalone}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{color}
+\usepackage{manfnt}
+\usepackage{mathtools}
+
+\usepackage{ifpdf}
+\ifpdf
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+%% % --- Thm, lmm etc are already done ---
+\newtheorem{example}{Example}
+\numberwithin{example}{section}
+% 
+\newtheorem{theorem}{Theorem}
+\numberwithin{theorem}{section}
+%
+\newtheorem{lemma}{Lemma}
+\numberwithin{lemma}{section}
+%
+\newtheorem{remark}{Remark}
+\numberwithin{remark}{section}
+%% % ---Shortcuts---
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\newcommand*{\Resize}[2]{\resizebox{#1}{!}{$#2$}}%
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\sitewho}{\textcolor{magenta}{$\left[?!?\right]$}}
+\newcommand{\site}[1]{\textcolor{magenta}{$\left[\text{#1}\right]$}}
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\semi}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\nhalf}{\Scale[0.5]{-\tfrac{1}{2}}}
+\newcommand{\dual}[1]{#1^{\prime}}
+\newcommand{\Div}[1]{\nabla\cdot #1}
+\renewcommand{\brack}[1]{\langle#1\rangle}
+\newcommand{\Next}[1]{#1^{n+1}}
+
+% ---Spaces---
+\newcommand{\hone}{H^{1}\left(\Omega\right)}
+\newcommand{\Hone}{\left[\hone]^3}
+\newcommand{\Z}{Z}
+\newcommand{\Zpolar}{Z^0}
+\newcommand{\Zperp}{Z^\perp}
+%% % ---Linalg---
+\newcommand{\inv}[1]{\ensuremath{{#1}^{-1}}}
+\newcommand{\tr}[1]{\ensuremath{{\text{tr}{#1}}}}
+\newcommand{\transp}[1]{\ensuremath{{#1}^{\Scale[0.5]{\top}}}}
+\newcommand{\la}[1]{\mathbf{#1}}
+\DeclareMathOperator{\spn}{span}
+
+% ---Change inf and sup alignments---
+\makeatletter
+\renewcommand{\inf}{\mathop{\@inf\vphantom{\@sup}}}
+\renewcommand{\sup}{\mathop{\@sup\vphantom{\@inf}}}
+\newcommand{\@inf}{\operatorname*{inf}}
+\newcommand{\@sup}{\operatorname*{sup}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\makeatother
+
+%%%%%%%%%%%%%%%
+% REVIEW STUFF
+\usepackage[final]{changes}  % put to final
+\definechangesauthor[name={rev1}, color=red]{rev1}            % addresses rev1
+\definechangesauthor[name={rev2}, color=green]{rev2}          % addresses rev2
+\definechangesauthor[name={revboth}, color=magenta]{revboth}  % addresses both
+\setremarkmarkup{(#2)}
+% Usage
+%This is \added[id=rev1,remark={we need this}]{new} text.
+% \deleted, \replaced
+% ---Color comments for authors---
+\newcommand{\KAM}[1]{\textcolor{orange}{KAM: #1}}
+\newcommand{\MK}[1]{\textcolor{cyan}{MK: #1}}
+\newcommand{\MM}[1]{\textcolor{blue}{MM: #1}}
+
+%%%%%%%%%%%%%%%
+
+\usepackage[dvips,colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+
+\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\def\volumeyear{2010}
+
+\begin{document}
+
+\runningheads{Authors}{Title short}
+
+\title{Title long}
+
+\author{
+%\affil{1}\corrauth\
+}
+ 
+\address{
+%\affilnum{1}Department of Mathematics, Division of Mechanics, University of Oslo\break
+%\affilnum{2}Center for Biomedical Computing, Simula Research Laboratory
+}
+ 
+\corraddr{E-mail: mirok@math.uio.no}
+
+% Grants stuff
+\cgs{}
+
+%\cgsn{}
+
+\begin{abstract}
+Abstract
+\end{abstract}
+
+\keywords{}
+
+\maketitle
+\vspace{-6pt}
+
+% Intro
+\input{equations}
+
+\bibliographystyle{wileyj}
+\bibliography{endocytosis.bib}
+\end{document}

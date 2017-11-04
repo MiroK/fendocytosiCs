@@ -1,0 +1,3 @@
+** FENdocytosICS is endocytosis in FEniCS
+
+To compile the pdf run `make` in the `tex` folder.
